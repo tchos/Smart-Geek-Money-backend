@@ -1,0 +1,43 @@
+@startuml Diagramme de classe Smart Money
+
+'https://plantuml.com/class-diagram
+
+enum CategoryType {
+INCOME
+EXPENSE
+}
+
+enum KeyType {
+EXPENSE_PLANNED_IN_MONTH
+INCOME_PLANNED_IN_MONTH
+START_BALANCE
+MY_NAME
+APP_NAME
+APP_VERSION
+}
+
+abstract class Transaction {
+-UUID id
+-Category category
+-Double amount
+-string note
+-LocalDate date
+}
+
+Transaction <|-- Income
+Transaction <|-- Expense
+
+class Category {
+-UUID id
+-string name
+-Double plannedInMonth
+-CategoryType type
+}
+
+class AppSetting {
+-UUID id
+-string name
+-KeyType key
+}
+
+@enduml

@@ -27,3 +27,6 @@ public class AppSetting {
     @Column(nullable = false)
     private String value;
 }
+
+
+

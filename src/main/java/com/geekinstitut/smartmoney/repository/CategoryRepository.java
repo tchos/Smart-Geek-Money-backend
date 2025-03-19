@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+// JpaRepository<Category, UUID> Category = Nom entite et UUID = type de la clef primaire.
+
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, UUID> {
 }
+

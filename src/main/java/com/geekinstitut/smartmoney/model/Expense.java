@@ -1,12 +1,10 @@
 package com.geekinstitut.smartmoney.model;
 
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Expense extends Transaction {
 }
 

@@ -1,18 +1,14 @@
 package com.geekinstitut.smartmoney.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @MappedSuperclass
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Transaction {

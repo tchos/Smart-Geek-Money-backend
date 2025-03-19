@@ -12,8 +12,6 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Category {
     @Id
     @GeneratedValue

@@ -1,10 +1,10 @@
 package com.geekinstitut.smartmoney.model;
 
+import com.geekinstitut.smartmoney.dto.TransactionResponseDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @MappedSuperclass
@@ -28,6 +28,19 @@ public abstract class Transaction {
 
     @Column(nullable = false)
     private LocalDate date;
+
+    /**
+     * Convertit une transaction en DTO de réponse.
+     */
+    public TransactionResponseDTO toResponse() {
+        return new TransactionResponseDTO(
+                this.category.getId(),
+                this.category.getName(),
+                this.amount,
+                this.note,
+                this.date
+        );
+    }
 }
 
 

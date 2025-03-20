@@ -31,7 +31,7 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         categoryService.getAllCategories();
         appSettingService.getAllAppSettings();
-        incomeService.getAllIncome();
-        expenseService.getAllExpense();
+        incomeService.getAllIncomes();
+        expenseService.getAllExpenses();
     }
 }

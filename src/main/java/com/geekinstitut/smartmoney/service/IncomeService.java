@@ -75,7 +75,7 @@ public class IncomeService {
     /**
      * Supprime un Income par son ID.
      */
-    public void updateIncome(UUID id) {
+    public void deleteIncome(UUID id) {
         if(!incomeRepository.existsById(id)) {
             throw new EntityNotFoundException("Expense not found with id: " + id);
         }

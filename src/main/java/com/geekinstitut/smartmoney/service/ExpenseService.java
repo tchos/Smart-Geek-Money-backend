@@ -22,7 +22,7 @@ public class ExpenseService {
     private final CategoryRepository categoryRepository;
 
     /**
-     * Recupere toutes les Expense
+     * Recupere toutes les transaction de type dépense
      */
     public List<TransactionResponseDTO> getAllExpenses() {
 
@@ -33,14 +33,14 @@ public class ExpenseService {
     }
 
     /**
-     * Recuperer un Expense par son ID
+     * Recuperer une transaction de type dépense par son ID
      */
     public Optional<Expense> getExpenseById(UUID id) {
         return expenseRepository.findById(id);
     }
 
     /**
-     * Crée un nouveau Expense.
+     * Crée un nouvelle transaction de type dépense.
      */
     public TransactionResponseDTO createExpense(TransactionRequestDTO requestDTO) {
         Category category = categoryRepository.findById(requestDTO.getCategoryId())
@@ -56,7 +56,7 @@ public class ExpenseService {
     }
 
     /**
-     * Met à jour un Expense existante.
+     * Met à jour une transaction existante de type dépense.
      */
     public Expense updateExpense(UUID id, Expense updatedExpense) {
         return expenseRepository.findById(id).map
@@ -74,7 +74,7 @@ public class ExpenseService {
     }
 
     /**
-     * Supprime un Expense par son ID.
+     * Supprime une transaction existante de type dépense par son ID.
      */
     public void deleteExpense(UUID id) {
         if(!expenseRepository.existsById(id)) {

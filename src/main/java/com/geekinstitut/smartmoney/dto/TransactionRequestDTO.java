@@ -12,6 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class TransactionRequestDTO {
     private UUID categoryId;
+    private String categoryName;
     private Double amount;
     private String note;
     private LocalDate date;

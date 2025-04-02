@@ -1,6 +1,7 @@
 package com.geekinstitut.smartmoney.service;
 
 import com.geekinstitut.smartmoney.model.Category;
+import com.geekinstitut.smartmoney.model.CategoryType;
 import com.geekinstitut.smartmoney.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,15 @@ public class CategoryService {
     }
 
     /**
+     * Retourne la liste des categorie pour un type donne
+     * @param type
+     * @return
+     */
+    public List<Category> getCategoriesByType(CategoryType type) {
+        return categoryRepository.findByType(type);
+    }
+
+    /**
      * Recuperer une categorie par son ID
      */
     public Optional<Category> getCategoryById(UUID id) {
@@ -38,7 +48,7 @@ public class CategoryService {
     }
 
     /**
-     * Met à jour une catégorie existante.
+     * Met à jour une catégorie existante: methode 1
      */
     public Category updateCategory(UUID id, Category updatedCategory) {
         return categoryRepository.findById(id)
@@ -50,6 +60,18 @@ public class CategoryService {
                 })
                 .orElseThrow(() -> new EntityNotFoundException("Category not found with id: " + id));
     }
+
+    /**
+     * Met à jour une catégorie existante: methode 2
+
+    public Category updateCategory(UUID id, Category updatedCategory) {
+        Category category = getCategoryById(id);
+        category.setName(updatedCategory.getName());
+        category.setPlannedInMonth(updatedCategory.getPlannedInMonth());
+        category.setType(updatedCategory.getType());
+        return categoryRepository.save(category);
+    }
+     */
 
     /**
      * Supprime une catégorie par son ID.

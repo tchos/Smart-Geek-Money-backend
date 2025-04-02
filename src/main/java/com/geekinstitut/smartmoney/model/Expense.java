@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Entity
-@Data
+//@Data
 public class Expense extends Transaction {
 }
 

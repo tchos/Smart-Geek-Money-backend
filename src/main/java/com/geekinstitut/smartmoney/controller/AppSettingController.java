@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/appsettings")
+@RequestMapping("/api/appsettings")
 public class AppSettingController {
 
     private final AppSettingService appSettingService;

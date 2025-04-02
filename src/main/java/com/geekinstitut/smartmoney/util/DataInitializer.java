@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DataInitializer implements CommandLineRunner {
 
+    /**
     private final CategoryService categoryService;
     private final AppSettingService appSettingService;
     private final IncomeService incomeService;
@@ -26,12 +27,15 @@ public class DataInitializer implements CommandLineRunner {
         this.incomeService = incomeService;
         this.expenseService = expenseService;
     }
-
+    **/
     @Override
     public void run(String... args) throws Exception {
+        /**
         categoryService.getAllCategories();
         appSettingService.getAllAppSettings();
         incomeService.getAllIncomes();
         expenseService.getAllExpenses();
+         **/
     }
+
 }
